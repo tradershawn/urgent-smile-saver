@@ -16,14 +16,18 @@ const Header = () => {
             </div>
           </div>
           
-          <Button variant="emergency" size="lg" className="hidden sm:flex">
-            <Phone className="mr-2 h-4 w-4" />
-            203-865-1480
-          </Button>
+          <a href="tel:203-865-1480">
+            <Button variant="emergency" size="lg" className="hidden sm:flex">
+              <Phone className="mr-2 h-4 w-4" />
+              <span className="callrail-phone">203-865-1480</span>
+            </Button>
+          </a>
           
-          <Button variant="emergency" size="icon" className="sm:hidden">
-            <Phone className="h-4 w-4" />
-          </Button>
+          <a href="tel:203-865-1480">
+            <Button variant="emergency" size="icon" className="sm:hidden">
+              <Phone className="h-4 w-4" />
+            </Button>
+          </a>
         </div>
       </div>
     </header>

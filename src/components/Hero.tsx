@@ -25,14 +25,16 @@ const Hero = () => {
           </p>
           
           <div>
-            <Button 
-              size="lg" 
-              variant="emergency"
-              className="text-lg h-14"
-            >
-              <Phone className="mr-2 h-5 w-5" />
-              Call Now: 203-865-1480
-            </Button>
+            <a href="tel:203-865-1480">
+              <Button 
+                size="lg" 
+                variant="emergency"
+                className="text-lg h-14"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Call Now: <span className="callrail-phone">203-865-1480</span>
+              </Button>
+            </a>
           </div>
           
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
