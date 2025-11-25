@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { useState } from "react";
 
 const reviews = [
   {
@@ -35,6 +36,20 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+  const [expandedReviews, setExpandedReviews] = useState<Set<number>>(new Set());
+
+  const toggleReview = (index: number) => {
+    setExpandedReviews(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
   return (
     <section className="py-20 bg-muted/50">
       <div className="container px-4 mx-auto">
@@ -46,24 +61,41 @@ const ReviewsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {reviews.map((review, index) => (
-            <Card 
-              key={index} 
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-            >
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-foreground">{review.name}</h3>
-                  <div className="flex gap-1">
-                    {Array.from({ length: review.rating }).map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
+          {reviews.map((review, index) => {
+            const isExpanded = expandedReviews.has(index);
+            const isLongReview = review.text.length > 200;
+            
+            return (
+              <Card 
+                key={index} 
+                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              >
+                <CardContent className="pt-6 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-bold text-foreground">{review.name}</h3>
+                    <div className="flex gap-1">
+                      {Array.from({ length: review.rating }).map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">{review.text}</p>
-              </CardContent>
-            </Card>
-          ))}
+                  <div className="flex-1">
+                    <p className={`text-muted-foreground leading-relaxed ${!isExpanded && isLongReview ? 'line-clamp-4' : ''}`}>
+                      {review.text}
+                    </p>
+                    {isLongReview && (
+                      <button
+                        onClick={() => toggleReview(index)}
+                        className="text-primary hover:underline text-sm mt-2 font-medium"
+                      >
+                        {isExpanded ? 'See less' : 'See more'}
+                      </button>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">
