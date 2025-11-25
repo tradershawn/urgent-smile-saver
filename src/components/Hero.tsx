@@ -31,7 +31,7 @@ const Hero = () => {
               className="text-lg h-14"
             >
               <Phone className="mr-2 h-5 w-5" />
-              Call Now: (203) 555-CARE
+              Call Now: 203-865-1480
             </Button>
             <Button 
               size="lg" 

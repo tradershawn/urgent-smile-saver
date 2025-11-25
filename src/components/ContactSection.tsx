@@ -103,7 +103,7 @@ const ContactSection = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-primary mb-2">(203) 555-CARE</p>
+                <p className="text-2xl font-bold text-primary mb-2">203-865-1480</p>
                 <p className="text-muted-foreground">24/7 Emergency Line</p>
               </CardContent>
             </Card>
