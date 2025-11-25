@@ -52,8 +52,9 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-1 text-sm">
-                  <p><span className="font-semibold">Monday - Friday:</span> 8am - 8pm</p>
-                  <p><span className="font-semibold">Saturday:</span> 9am - 6pm</p>
+                  <p><span className="font-semibold">Monday - Thursday:</span> 9am - 4pm</p>
+                  <p><span className="font-semibold">Friday:</span> 8:30am - 2:30pm</p>
+                  <p><span className="font-semibold">Saturday:</span> Closed</p>
                   <p><span className="font-semibold">Sunday:</span> 10am - 4pm</p>
                   <p className="text-accent font-semibold mt-2">Emergency calls 24/7</p>
                 </div>
