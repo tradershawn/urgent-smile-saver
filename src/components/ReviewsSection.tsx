@@ -3,40 +3,34 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sarah Johnson",
-    date: "2 weeks ago",
+    name: "Elinora Adoniyahu",
     rating: 5,
-    text: "I had a terrible toothache on a Saturday night and they got me in right away. The dentist was professional and compassionate. My tooth pain was gone within hours!",
+    text: "Got a filling here and exam. Best dentist experience I've ever had. They really care, very pleasant.",
   },
   {
-    name: "Michael Chen",
-    date: "1 month ago",
+    name: "Roman Domatov",
     rating: 5,
-    text: "Broke a tooth during dinner and was in panic mode. Called their emergency line and they saw me the same day. Fast, professional service. Highly recommend!",
+    text: "I had an outstanding experience at this dental office! Dr. Jakob and his assistant Marina were exceptional from start to finish. Jakob was incredibly professional, gentle, and thorough—he took the time to explain everything clearly and made sure I felt comfortable throughout the entire visit. Marina was equally amazing, attentive, and reassuring, creating a calming environment and anticipating everything needed to make the appointment run smoothly. Together, they make a fantastic team. Highly recommend this office, especially Jakob and Marina, for anyone looking for skilled, caring, and genuinely friendly dental professionals!",
   },
   {
-    name: "Jessica Martinez",
-    date: "3 weeks ago",
+    name: "Charles Butler",
     rating: 5,
-    text: "Amazing emergency dental care! Had severe jaw pain and they diagnosed the issue immediately. The staff was caring and explained everything clearly.",
+    text: "Divine Smiles brought my smile back to Life! They are Super Official. Do your teeth a favor and make an appointment.",
   },
   {
-    name: "David Thompson",
-    date: "1 week ago",
+    name: "Jackson O'Connor",
     rating: 5,
-    text: "Best emergency dental experience I've ever had. They worked with my insurance and got me out of pain quickly. The office is clean and the staff is wonderful.",
+    text: "Anna's scheduling flexibility accommodated my urgent extraction need and painless treatment was delivered immediately that day.",
   },
   {
-    name: "Emily Rodriguez",
-    date: "2 months ago",
+    name: "Muhammad Kholiful Ashdiq",
     rating: 5,
-    text: "Had an urgent dental emergency on Sunday morning. They answered right away and scheduled me within hours. Professional, efficient, and caring team.",
+    text: "Dr. Shande handled my complex extraction with such skill that it was completely painless from start to finish!",
   },
   {
-    name: "Robert Wilson",
-    date: "3 weeks ago",
+    name: "David Jehudaiov",
     rating: 5,
-    text: "Needed an emergency tooth extraction and was terrified. The dentist was gentle and made me feel comfortable throughout. Pain-free recovery thanks to their excellent care!",
+    text: "I had an amazing experience with Dr. Yaakov when he treated a tooth with a large infection. He performed an exceptional root canal—completely pain-free and handled with great care. Dr. Yaakov explained everything clearly and made sure I was comfortable throughout the entire procedure. The infection was taken care of, and my tooth feels perfect now. The staff was friendly, the office spotless, and the whole experience was smooth from start to finish. I'm so thankful for Dr. Yaakov's skill and professionalism—highly recommend him!",
   },
 ];
 
@@ -59,10 +53,7 @@ const ReviewsSection = () => {
             >
               <CardContent className="pt-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="font-bold text-foreground">{review.name}</h3>
-                    <p className="text-sm text-muted-foreground">{review.date}</p>
-                  </div>
+                  <h3 className="font-bold text-foreground">{review.name}</h3>
                   <div className="flex gap-1">
                     {Array.from({ length: review.rating }).map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
