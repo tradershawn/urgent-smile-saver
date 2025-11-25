@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import logo from "@/assets/divine-smiles-logo.png";
 
 const Header = () => {
   return (
@@ -10,24 +11,24 @@ const Header = () => {
             <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
               <span className="text-2xl">🦷</span>
             </div>
-            <div>
-              <h1 className="font-bold text-lg">New Haven Emergency Dental</h1>
-              <p className="text-xs text-muted-foreground">Your Trusted Emergency Dentist</p>
-            </div>
           </div>
           
-          <a href="tel:203-865-1480">
-            <Button variant="emergency" size="lg" className="hidden sm:flex">
-              <Phone className="mr-2 h-4 w-4" />
-              <span className="callrail-phone">203-865-1480</span>
-            </Button>
-          </a>
-          
-          <a href="tel:203-865-1480">
-            <Button variant="emergency" size="icon" className="sm:hidden">
-              <Phone className="h-4 w-4" />
-            </Button>
-          </a>
+          <div className="flex items-center gap-4">
+            <img src={logo} alt="Divine Smiles" className="h-12 w-auto" />
+            
+            <a href="tel:203-865-1480">
+              <Button variant="emergency" size="lg" className="hidden sm:flex">
+                <Phone className="mr-2 h-4 w-4" />
+                <span className="callrail-phone">203-865-1480</span>
+              </Button>
+            </a>
+            
+            <a href="tel:203-865-1480">
+              <Button variant="emergency" size="icon" className="sm:hidden">
+                <Phone className="h-4 w-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </header>
