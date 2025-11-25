@@ -24,7 +24,7 @@ const Hero = () => {
             and urgent dental needs. Your trusted emergency dental clinic near you.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div>
             <Button 
               size="lg" 
               variant="emergency"
@@ -32,13 +32,6 @@ const Hero = () => {
             >
               <Phone className="mr-2 h-5 w-5" />
               Call Now: 203-865-1480
-            </Button>
-            <Button 
-              size="lg" 
-              variant="default"
-              className="text-lg h-14"
-            >
-              Book Appointment Today
             </Button>
           </div>
           
