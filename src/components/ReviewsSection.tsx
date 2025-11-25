@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const reviews = [
   {
@@ -37,6 +38,7 @@ const reviews = [
 
 const ReviewsSection = () => {
   const [expandedReviews, setExpandedReviews] = useState<Set<number>>(new Set());
+  const { ref, isVisible } = useScrollAnimation();
 
   const toggleReview = (index: number) => {
     setExpandedReviews(prev => {
@@ -51,9 +53,9 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/50">
+    <section ref={ref} className="py-20 bg-muted/50">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold mb-4">What Our Patients Say</h2>
           <p className="text-xl text-muted-foreground">
             Real reviews from patients we've helped with emergency dental care
@@ -68,7 +70,10 @@ const ReviewsSection = () => {
             return (
               <Card 
                 key={index} 
-                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className={`hover:shadow-lg transition-all duration-700 hover:-translate-y-1 flex flex-col ${
+                  isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="pt-6 flex flex-col h-full">
                   <div className="flex items-center justify-between mb-4">
