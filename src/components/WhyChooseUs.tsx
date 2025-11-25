@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const benefits = [
   "Experienced emergency dentists in New Haven",
@@ -12,10 +13,12 @@ const benefits = [
 ];
 
 const WhyChooseUs = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20">
+    <section ref={ref} className="py-20">
       <div className="container px-4 mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <div>
             <h2 className="text-4xl font-bold mb-6">
               Why Choose Our Emergency Dental Clinic?

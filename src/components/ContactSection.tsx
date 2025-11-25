@@ -1,19 +1,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Clock } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const ContactSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 bg-muted/50">
+    <section ref={ref} className="py-20 bg-muted/50">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold mb-4">Contact Us for Emergency Dental Care</h2>
           <p className="text-xl text-muted-foreground">
             Available 24/7 for urgent dental care in New Haven
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className={`grid md:grid-cols-3 gap-6 max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">

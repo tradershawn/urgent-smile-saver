@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import doctor1 from "@/assets/doctors/doctor-1.jpg";
 import doctor2 from "@/assets/doctors/doctor-2.jpg";
 import doctor3 from "@/assets/doctors/doctor-3.jpg";
@@ -20,10 +21,12 @@ const doctors = [
 ];
 
 const DoctorsSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section ref={ref} className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold mb-4">Meet Our Expert Dental Team</h2>
           <p className="text-xl text-muted-foreground">
             Experienced professionals ready to handle your emergency dental needs
@@ -34,7 +37,10 @@ const DoctorsSection = () => {
           {doctors.map((doctor, index) => (
             <Card 
               key={index} 
-              className="text-center overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2"
+              className={`text-center overflow-hidden hover:shadow-lg transition-all duration-700 border-2 ${
+                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="pt-8 pb-6 px-4">
                 <div className="mb-4 flex justify-center">

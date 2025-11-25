@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import heroImage from "@/assets/dental-hero.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Hero = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="relative min-h-[600px] flex items-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[600px] flex items-center overflow-hidden">
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -15,7 +18,7 @@ const Hero = () => {
       />
       
       <div className="container relative z-10 px-4 mx-auto">
-        <div className="max-w-2xl">
+        <div className={`max-w-2xl transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Emergency Dental Care in <span className="text-primary">New Haven</span>
           </h1>
