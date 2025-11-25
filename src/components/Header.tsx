@@ -18,7 +18,7 @@ const Header = () => {
           
           <Button variant="emergency" size="lg" className="hidden sm:flex">
             <Phone className="mr-2 h-4 w-4" />
-            (203) 555-CARE
+            203-865-1480
           </Button>
           
           <Button variant="emergency" size="icon" className="sm:hidden">

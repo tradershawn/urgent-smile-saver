@@ -17,7 +17,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Information</h3>
             <ul className="space-y-2 text-sm opacity-90">
-              <li>📞 (203) 555-CARE</li>
+              <li>📞 203-865-1480</li>
               <li>📧 emergency@newhavendent.com</li>
               <li>📍 123 Medical Plaza, New Haven, CT</li>
               <li>🕐 Open 7 Days a Week</li>
