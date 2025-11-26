@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm opacity-90">
               <li>📞 <a href="tel:203-350-7723" className="hover:underline">203-350-7723</a></li>
               <li>📧 emergency@newhavendent.com</li>
-              <li>📍 123 Medical Plaza, New Haven, CT</li>
+              <li>📍 1574 Chapel St, New Haven, CT 06511</li>
               <li>🕐 Open 7 Days a Week</li>
             </ul>
           </div>

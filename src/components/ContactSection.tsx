@@ -40,8 +40,8 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <p className="font-semibold mb-1">New Haven Emergency Dental</p>
-                <p className="text-muted-foreground">123 Medical Plaza</p>
-                <p className="text-muted-foreground">New Haven, CT 06510</p>
+                <p className="text-muted-foreground">1574 Chapel St</p>
+                <p className="text-muted-foreground">New Haven, CT 06511</p>
               </CardContent>
             </Card>
 
