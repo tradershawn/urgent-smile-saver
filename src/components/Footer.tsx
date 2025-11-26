@@ -17,7 +17,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Information</h3>
             <ul className="space-y-2 text-sm opacity-90">
-              <li>📞 <a href="tel:203-865-1480" className="hover:underline">203-865-1480</a></li>
+              <li>📞 <a href="tel:203-350-7723" className="hover:underline">203-350-7723</a></li>
               <li>📧 emergency@newhavendent.com</li>
               <li>📍 123 Medical Plaza, New Haven, CT</li>
               <li>🕐 Open 7 Days a Week</li>

@@ -24,8 +24,8 @@ const ContactSection = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <a href="tel:203-865-1480" className="text-2xl font-bold text-primary mb-2 block hover:underline">
-                  203-865-1480
+                <a href="tel:203-350-7723" className="text-2xl font-bold text-primary mb-2 block hover:underline">
+                  203-350-7723
                 </a>
                 <p className="text-muted-foreground">24/7 Emergency Line</p>
               </CardContent>
