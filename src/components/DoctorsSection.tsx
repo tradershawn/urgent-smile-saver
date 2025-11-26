@@ -1,21 +1,21 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import doctor1 from "@/assets/doctors/doctor-1.jpg";
-import doctor2 from "@/assets/doctors/doctor-2.jpg";
-import doctor3 from "@/assets/doctors/doctor-3.jpg";
-import doctor4 from "@/assets/doctors/doctor-4.jpg";
-import doctor5 from "@/assets/doctors/doctor-5.jpg";
-import doctor6 from "@/assets/doctors/doctor-6.jpg";
+import shandeAndinyaguev from "@/assets/doctors/shande-andinyaguev.webp";
+import charlesSpatz from "@/assets/doctors/charles-spatz.webp";
+import danielPlishtiyev from "@/assets/doctors/daniel-plishtiyev.webp";
+import jakobDavydov from "@/assets/doctors/jakob-davydov.webp";
+import jacobFakhlayev from "@/assets/doctors/jacob-fakhlayev.webp";
+import yaakovSulimanov from "@/assets/doctors/yaakov-sulimanov.webp";
 import doctor7 from "@/assets/doctors/doctor-7.jpg";
 import doctor8 from "@/assets/doctors/doctor-8.jpg";
 
 const doctors = [
-  { name: "Dr. Shande Andinyaguev", specialty: "Doctor of Dental Surgery", image: doctor1 },
-  { name: "Dr. Charles Spatz", specialty: "Doctor of Dental Surgery", image: doctor2 },
-  { name: "Dr. Daniel Plishtiyev", specialty: "Doctor of Dental Surgery", image: doctor3 },
-  { name: "Dr. Jakob Davydov", specialty: "Doctor of Dental Surgery", image: doctor4 },
-  { name: "Dr Jacob Fakhlayev", specialty: "Doctor of Dental Surgery", image: doctor5 },
-  { name: "Dr Yaakov Sulimanov", specialty: "Doctor of Dental Surgery", image: doctor6 },
+  { name: "Dr. Shande Andinyaguev", specialty: "Doctor of Dental Surgery", image: shandeAndinyaguev },
+  { name: "Dr. Charles Spatz", specialty: "Doctor of Dental Surgery", image: charlesSpatz },
+  { name: "Dr. Daniel Plishtiyev", specialty: "Doctor of Dental Surgery", image: danielPlishtiyev },
+  { name: "Dr. Jakob Davydov", specialty: "Doctor of Dental Surgery", image: jakobDavydov },
+  { name: "Dr Jacob Fakhlayev", specialty: "Doctor of Dental Surgery", image: jacobFakhlayev },
+  { name: "Dr Yaakov Sulimanov", specialty: "Doctor of Dental Surgery", image: yaakovSulimanov },
   { name: "Dr Ahava Bensoussan", specialty: "Doctor of Dental Surgery", image: doctor7 },
   { name: "Dr Alex Kupchik", specialty: "Doctor of Dental Surgery", image: doctor8 },
 ];
