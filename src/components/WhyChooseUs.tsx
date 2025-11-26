@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section ref={ref} className="py-20">
+    <section id="why-choose-us" ref={ref} className="py-20">
       <div className="container px-4 mx-auto">
         <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <div>

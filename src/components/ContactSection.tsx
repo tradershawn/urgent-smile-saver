@@ -6,7 +6,7 @@ const ContactSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-20 bg-muted/50">
+    <section id="contact" ref={ref} className="py-20 bg-muted/50">
       <div className="container px-4 mx-auto">
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold mb-4">Contact Us for Emergency Dental Care</h2>

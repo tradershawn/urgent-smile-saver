@@ -53,7 +53,7 @@ const ReviewsSection = () => {
   };
 
   return (
-    <section ref={ref} className="py-20 bg-muted/50">
+    <section id="reviews" ref={ref} className="py-20 bg-muted/50">
       <div className="container px-4 mx-auto">
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold mb-4">What Our Patients Say</h2>
