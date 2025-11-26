@@ -24,7 +24,7 @@ const DoctorsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section id="our-team" ref={ref} className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container px-4 mx-auto">
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold mb-4">Meet Our Expert Dental Team</h2>
