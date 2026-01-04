@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ToothPain from "./pages/emergency/ToothPain";
 import BrokenTooth from "./pages/emergency/BrokenTooth";
+import DentalImplants from "./pages/DentalImplants";
 import KnockedOutTooth from "./pages/emergency/KnockedOutTooth";
 import SwollenJaw from "./pages/emergency/SwollenJaw";
 import LostFillingCrown from "./pages/emergency/LostFillingCrown";
@@ -26,6 +27,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/dental-implants" element={<DentalImplants />} />
           <Route path="/emergency/tooth-pain" element={<ToothPain />} />
           <Route path="/emergency/broken-tooth" element={<BrokenTooth />} />
           <Route path="/emergency/knocked-out-tooth" element={<KnockedOutTooth />} />
