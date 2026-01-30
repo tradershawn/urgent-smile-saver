@@ -9,6 +9,8 @@ import { Phone, CheckCircle, ArrowRight, Shield, Clock, Heart, Sparkles, Target,
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet";
 import heroImage from "@/assets/dental-hero.jpg";
+import dentalImplantDiagram from "@/assets/dental-implant-diagram.jpg";
+import dentalImplantInMouth from "@/assets/dental-implant-in-mouth.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const DentalImplants = () => {
@@ -254,6 +256,55 @@ const DentalImplants = () => {
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* DENTAL IMPLANT VISUAL EXPLAINER */}
+          <section className="py-16">
+            <div className="container px-4 mx-auto max-w-5xl">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Understanding Dental Implants
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  See exactly how a dental implant replaces a missing tooth—from the titanium root to the natural-looking crown.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border bg-background">
+                  <img 
+                    src={dentalImplantDiagram} 
+                    alt="Dental implant cross-section showing titanium post, abutment, and crown" 
+                    className="w-full h-auto"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                    <p className="text-sm font-medium text-center">
+                      Cross-section: Implant, Abutment & Crown
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border bg-background">
+                  <img 
+                    src={dentalImplantInMouth} 
+                    alt="Dental implant placement showing how it integrates with natural teeth" 
+                    className="w-full h-auto"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                    <p className="text-sm font-medium text-center">
+                      How an implant fits with your natural teeth
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Unlike bridges or dentures, implants replace the <strong>entire tooth structure</strong>—including the root. 
+                  This preserves your jawbone and provides the stability of a natural tooth.
+                </p>
               </div>
             </div>
           </section>
