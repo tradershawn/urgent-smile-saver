@@ -5,7 +5,7 @@ import ReviewsSection from "@/components/ReviewsSection";
 import DoctorsSection from "@/components/DoctorsSection";
 import ContactSection from "@/components/ContactSection";
 import { Button } from "@/components/ui/button";
-import { Phone, CheckCircle, ArrowRight, Shield, Clock, Heart, Sparkles, Target, Award, Star, DollarSign, CreditCard } from "lucide-react";
+import { Phone, CheckCircle, ArrowRight, Shield, Clock, Heart, Sparkles, Target, Award, Star, DollarSign, CreditCard, Layers, Users, Workflow } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet";
 import heroImage from "@/assets/dental-hero.jpg";
@@ -29,6 +29,8 @@ const DentalImplants = () => {
   const financingAnimation = useScrollAnimation();
   const finalCtaAnimation = useScrollAnimation();
   const whyDivineAnimation = useScrollAnimation();
+  const implantOptionsAnimation = useScrollAnimation();
+  const implantProcessAnimation = useScrollAnimation();
 
   const [showStickyBar, setShowStickyBar] = useState(false);
 
@@ -248,10 +250,95 @@ const DentalImplants = () => {
             </div>
           </section>
 
+          {/* IMPLANT OPTIONS & TYPES */}
+          <section
+            id="implant-options"
+            ref={implantOptionsAnimation.ref}
+            className="py-20"
+          >
+            <div className="container px-4 mx-auto max-w-5xl">
+              <div className={`transition-all duration-700 ${implantOptionsAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Implant Options & Types
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Single, multiple & full arch. Find your perfect smile solution.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8 mb-10">
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Target className="h-7 w-7 text-primary" />
+                      </div>
+                      <h3 className="font-semibold text-lg mb-3">Single Tooth Implant</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Replace one missing tooth without affecting neighboring teeth. A titanium post replaces the root, topped with a custom-matched crown.
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1 text-left">
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Preserves adjacent healthy teeth</li>
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Prevents bone loss at the site</li>
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Looks and feels completely natural</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Layers className="h-7 w-7 text-primary" />
+                      </div>
+                      <h3 className="font-semibold text-lg mb-3">Multiple Teeth Implants</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Missing several teeth in a row? An implant-supported bridge replaces multiple teeth using just two or three implant posts.
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1 text-left">
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Fewer implants than individual posts</li>
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Fixed, non-removable solution</li>
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Restores full chewing function</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Users className="h-7 w-7 text-primary" />
+                      </div>
+                      <h3 className="font-semibold text-lg mb-3">Full Arch Restoration</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Replace an entire upper or lower arch of teeth with as few as four implants. A permanent alternative to dentures.
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1 text-left">
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> No more removable dentures</li>
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Eat anything with confidence</li>
+                        <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /> Dramatic quality-of-life improvement</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-muted-foreground mb-6">
+                    Not sure which option is right for you? That's exactly what your free consultation is for.
+                  </p>
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg h-14 px-10">
+                      <Phone className="mr-2 h-5 w-5" />
+                      {FREE_CONSULT_CTA}
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* THE "SLOW BURN" PROBLEM SECTION */}
           <section 
             ref={problemAnimation.ref}
-            className="py-20"
+            className="py-20 bg-muted/30"
           >
             <div className="container px-4 mx-auto max-w-4xl">
               <div className={`transition-all duration-700 ${problemAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -465,8 +552,9 @@ const DentalImplants = () => {
             </div>
           </section>
 
-          {/* WHAT A DENTAL IMPLANT REALLY DOES */}
+          {/* WHAT A DENTAL IMPLANT REALLY DOES / BENEFITS */}
           <section 
+            id="benefits"
             ref={whatAnimation.ref}
             className="py-20 bg-muted/30"
           >
@@ -659,6 +747,93 @@ const DentalImplants = () => {
             </div>
           </section>
 
+          {/* THE IMPLANT PROCESS */}
+          <section
+            id="implant-process"
+            ref={implantProcessAnimation.ref}
+            className="py-20 bg-muted/30"
+          >
+            <div className="container px-4 mx-auto max-w-4xl">
+              <div className={`transition-all duration-700 ${implantProcessAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    The Implant Process: What to Expect
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Step-by-step implant journey. Understand your path to a new smile.
+                  </p>
+                </div>
+
+                <div className="space-y-8">
+                  <div className="flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-14 h-14 bg-accent/15 rounded-full flex items-center justify-center border-2 border-accent/30">
+                      <span className="text-accent font-bold text-lg">1</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">Free Consultation & 3D Scan</h3>
+                      <p className="text-muted-foreground">
+                        We evaluate your oral health, take detailed 3D images of your jaw, and discuss 
+                        your goals. You'll leave with a personalized treatment plan and clear cost breakdown.
+                      </p>
+                      <p className="text-sm text-accent font-medium mt-2">⏱ About 45 minutes</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-14 h-14 bg-accent/15 rounded-full flex items-center justify-center border-2 border-accent/30">
+                      <span className="text-accent font-bold text-lg">2</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">Implant Placement</h3>
+                      <p className="text-muted-foreground">
+                        The titanium implant post is placed into your jawbone under local anesthesia. 
+                        Most patients say it's easier than they expected. You'll receive a temporary tooth so you're never without a smile.
+                      </p>
+                      <p className="text-sm text-accent font-medium mt-2">⏱ 1–2 hours per implant</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-14 h-14 bg-accent/15 rounded-full flex items-center justify-center border-2 border-accent/30">
+                      <span className="text-accent font-bold text-lg">3</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">Healing & Osseointegration</h3>
+                      <p className="text-muted-foreground">
+                        Over 3–6 months, your jawbone naturally fuses with the implant, creating a rock-solid 
+                        foundation. We monitor your progress with check-in visits during this time.
+                      </p>
+                      <p className="text-sm text-accent font-medium mt-2">⏱ 3–6 months (mostly waiting)</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-14 h-14 bg-accent/15 rounded-full flex items-center justify-center border-2 border-accent/30">
+                      <span className="text-accent font-bold text-lg">4</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">Custom Crown Placement</h3>
+                      <p className="text-muted-foreground">
+                        Your permanent crown is custom-crafted to match the color, shape, and size of your 
+                        natural teeth. It's attached to the implant — and you're done. Eat, smile, and live normally.
+                      </p>
+                      <p className="text-sm text-accent font-medium mt-2">⏱ About 1 hour</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center mt-10">
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg h-14">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Start With Your Free Consult
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* WHY DIVINE SMILES - DETAILED */}
           <section 
             ref={whyUsAnimation.ref}
@@ -787,8 +962,9 @@ const DentalImplants = () => {
             </div>
           </section>
 
-          {/* OBJECTION HANDLING */}
+          {/* FAQ / OBJECTION HANDLING */}
           <section 
+            id="faq"
             ref={objectionsAnimation.ref}
             className="py-20"
           >
@@ -991,7 +1167,7 @@ const DentalImplants = () => {
           {/* FINAL CTA */}
           <section 
             ref={finalCtaAnimation.ref}
-            id="consultation-form"
+            id="free-consultation"
             className="py-20 bg-primary text-primary-foreground"
           >
             <div className="container px-4 mx-auto max-w-3xl">
@@ -1067,7 +1243,9 @@ const DentalImplants = () => {
           </section>
 
           <ReviewsSection />
-          <DoctorsSection />
+          <section id="implant-team">
+            <DoctorsSection />
+          </section>
           <ContactSection />
         </main>
         <Footer />
