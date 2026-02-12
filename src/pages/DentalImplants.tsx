@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhyChooseUs from "@/components/WhyChooseUs";
+
 import ReviewsSection from "@/components/ReviewsSection";
 import DoctorsSection from "@/components/DoctorsSection";
 import ContactSection from "@/components/ContactSection";
@@ -33,7 +33,7 @@ const DentalImplants = () => {
         <link rel="canonical" href="https://emergency.divinesmilespc.com/dental-implants" />
       </Helmet>
       
-      <div className="min-h-screen">
+      <div className="min-h-screen pb-20 md:pb-0">
         <Header />
         <main>
           {/* HERO SECTION - Instant Self-Identification */}
@@ -863,7 +863,6 @@ const DentalImplants = () => {
             </div>
           </section>
 
-          <WhyChooseUs />
           <ReviewsSection />
           <DoctorsSection />
           <ContactSection />
