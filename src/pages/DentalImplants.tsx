@@ -5,13 +5,17 @@ import ReviewsSection from "@/components/ReviewsSection";
 import DoctorsSection from "@/components/DoctorsSection";
 import ContactSection from "@/components/ContactSection";
 import { Button } from "@/components/ui/button";
-import { Phone, CheckCircle, ArrowRight, Shield, Clock, Heart, Sparkles, Target, Award } from "lucide-react";
+import { Phone, CheckCircle, ArrowRight, Shield, Clock, Heart, Sparkles, Target, Award, Star, DollarSign, CreditCard } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet";
 import heroImage from "@/assets/dental-hero.jpg";
 import dentalImplantDiagram from "@/assets/dental-implant-diagram.jpg";
 import dentalImplantInMouth from "@/assets/dental-implant-in-mouth.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useEffect, useState } from "react";
+
+const FREE_CONSULT_CTA = "Claim Your FREE Implant Consultation";
+const PHONE_NUMBER = "203-350-7723";
 
 const DentalImplants = () => {
   const heroAnimation = useScrollAnimation();
@@ -24,22 +28,59 @@ const DentalImplants = () => {
   const costAnimation = useScrollAnimation();
   const financingAnimation = useScrollAnimation();
   const finalCtaAnimation = useScrollAnimation();
+  const whyDivineAnimation = useScrollAnimation();
+
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowStickyBar(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <Helmet>
-        <title>Dental Implants New Haven CT | Permanent Tooth Replacement | Divine Smiles</title>
-        <meta name="description" content="Missing a tooth? Dental implants offer a permanent, natural-looking solution. Schedule your personalized consultation at Divine Smiles in New Haven, CT. No pressure, just clarity." />
+        <title>FREE Dental Implant Consultation | New Haven CT | Divine Smiles</title>
+        <meta name="description" content="Schedule your FREE dental implant consultation at Divine Smiles in New Haven, CT. Permanent, natural-looking tooth replacement. Flexible financing available. Call 203-350-7723." />
         <link rel="canonical" href="https://emergency.divinesmilespc.com/dental-implants" />
       </Helmet>
       
-      <div className="min-h-screen pb-20 md:pb-0">
+      <div className="min-h-screen pb-24 md:pb-0">
         <Header />
+
+        {/* STICKY DESKTOP CTA BAR */}
+        <div className={`fixed top-0 left-0 right-0 z-[60] bg-accent text-accent-foreground transition-transform duration-300 ${showStickyBar ? 'translate-y-0' : '-translate-y-full'}`}>
+          <div className="container px-4 mx-auto">
+            <div className="flex items-center justify-between h-12">
+              <p className="text-sm font-semibold hidden sm:block">
+                🎉 FREE Implant Consultation — Limited Availability
+              </p>
+              <p className="text-sm font-semibold sm:hidden">
+                🎉 FREE Consultation Available
+              </p>
+              <div className="flex items-center gap-3">
+                <a href={`tel:${PHONE_NUMBER}`} className="hidden md:flex items-center gap-1 text-sm font-bold hover:underline">
+                  <Phone className="h-3.5 w-3.5" />
+                  {PHONE_NUMBER}
+                </a>
+                <a href={`tel:${PHONE_NUMBER}`}>
+                  <Button size="sm" variant="secondary" className="font-bold text-xs h-8">
+                    {FREE_CONSULT_CTA}
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <main>
-          {/* HERO SECTION - Instant Self-Identification */}
+          {/* HERO SECTION */}
           <section 
             ref={heroAnimation.ref}
-            className="relative min-h-[650px] flex items-center overflow-hidden"
+            className="relative min-h-[700px] flex items-center overflow-hidden"
           >
             <div 
               className="absolute inset-0 z-0"
@@ -52,34 +93,56 @@ const DentalImplants = () => {
             
             <div className="container relative z-10 px-4 mx-auto">
               <div className={`max-w-3xl transition-all duration-700 ${heroAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm font-medium">
-                  <Shield className="h-4 w-4" />
-                  Trusted by New Haven families for 15+ years
+                {/* Free consultation badge */}
+                <div className="inline-flex items-center gap-2 bg-accent/15 text-accent border border-accent/30 px-5 py-2.5 rounded-full mb-6 text-sm font-bold">
+                  <Sparkles className="h-4 w-4" />
+                  FREE Implant Consultation — Schedule Today
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Missing a Tooth? <br />
-                  <span className="text-primary">Replace It Permanently.</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                  Restore Your Smile <br />
+                  <span className="text-primary">Permanently with Dental Implants</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl mb-8 text-muted-foreground leading-relaxed">
+                <p className="text-lg md:text-xl mb-3 text-foreground font-medium">
+                  Durable. Functional. Beautiful. Expert care for a lasting smile.
+                </p>
+
+                <p className="text-lg md:text-xl mb-8 text-muted-foreground leading-relaxed">
                   A dental implant looks, feels, and works like a real tooth—because it's built 
                   the same way, from the root up. No bridges. No removable pieces. Just your smile, restored.
                 </p>
+
+                {/* Context clarification for emergency subdomain */}
+                <div className="bg-muted/50 border rounded-lg px-4 py-3 mb-6 text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">Note:</span> While Divine Smiles also provides emergency dental services, this page is for <strong>scheduled implant consultations</strong>. Take your time — no rush, no pressure.
+                </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <a href="#consultation-form">
-                    <Button size="lg" className="text-lg h-14 px-8">
-                      See If a Dental Implant Is the Right Fix
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
-                  <a href="tel:203-350-7723">
-                    <Button size="lg" variant="outline" className="text-lg h-14 px-8">
+                {/* Primary CTA - Large and prominent */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg h-16 px-10 w-full sm:w-auto shadow-lg">
                       <Phone className="mr-2 h-5 w-5" />
-                      203-350-7723
+                      {FREE_CONSULT_CTA}
                     </Button>
                   </a>
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="outline" className="text-lg h-16 px-8 w-full sm:w-auto">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Call {PHONE_NUMBER}
+                    </Button>
+                  </a>
+                </div>
+
+                {/* Social proof */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="font-bold text-lg">4.9</span>
+                  <span className="text-muted-foreground text-sm">Stars on Google · 200+ Reviews</span>
                 </div>
                 
                 <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
@@ -93,8 +156,93 @@ const DentalImplants = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
-                    <span>In-House Care From Start to Finish</span>
+                    <span>Flexible Financing Available</span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* WHY DIVINE SMILES - Right after hero */}
+          <section
+            ref={whyDivineAnimation.ref}
+            className="py-20 bg-gradient-to-br from-primary/5 to-accent/5"
+          >
+            <div className="container px-4 mx-auto max-w-5xl">
+              <div className={`transition-all duration-700 ${whyDivineAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Why Divine Smiles for Your Implant?
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Not all implant providers are the same. Here's what sets Divine Smiles apart in New Haven.
+                  </p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <Award className="h-10 w-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold text-lg mb-2">15+ Years of Expertise</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Our experienced team has placed hundreds of implants with a focus on lasting results.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <Target className="h-10 w-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold text-lg mb-2">Advanced 3D Technology</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Detailed 3D imaging for precise placement — fewer surprises, better outcomes.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <Heart className="h-10 w-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold text-lg mb-2">Patient-First Comfort</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Gentle, personalized care where we explain every step and ensure your comfort throughout.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold text-lg mb-2">All Care Under One Roof</h3>
+                      <p className="text-sm text-muted-foreground">
+                        From consultation to final crown — no referrals, no handoffs. One team knows your case.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold text-lg mb-2">Custom-Matched Crowns</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Your implant crown is crafted to perfectly match the color, shape, and size of your natural teeth.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-t-4 border-t-primary">
+                    <CardContent className="pt-6 text-center">
+                      <DollarSign className="h-10 w-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold text-lg mb-2">Flexible Payment Plans</h3>
+                      <p className="text-sm text-muted-foreground">
+                        We offer financing options and accept most insurance to make implants accessible.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="text-center">
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg h-14 px-10">
+                      <Phone className="mr-2 h-5 w-5" />
+                      {FREE_CONSULT_CTA}
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -103,7 +251,7 @@ const DentalImplants = () => {
           {/* THE "SLOW BURN" PROBLEM SECTION */}
           <section 
             ref={problemAnimation.ref}
-            className="py-20 bg-muted/30"
+            className="py-20"
           >
             <div className="container px-4 mx-auto max-w-4xl">
               <div className={`transition-all duration-700 ${problemAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -157,9 +305,9 @@ const DentalImplants = () => {
                 </div>
                 
                 <div className="text-center mt-10">
-                  <a href="#consultation-form">
-                    <Button size="lg" variant="outline" className="text-lg">
-                      Find Out What Replacing a Missing Tooth Really Involves
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg h-14">
+                      {FREE_CONSULT_CTA}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </a>
@@ -171,7 +319,7 @@ const DentalImplants = () => {
           {/* WHY WAITING MAKES IT HARDER */}
           <section 
             ref={waitingAnimation.ref}
-            className="py-20"
+            className="py-20 bg-muted/30"
           >
             <div className="container px-4 mx-auto max-w-4xl">
               <div className={`transition-all duration-700 ${waitingAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -249,11 +397,17 @@ const DentalImplants = () => {
                     <p className="text-lg font-medium mb-4">
                       "I wish I had done this sooner."
                     </p>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground mb-6">
                       This is the most common thing patients tell us after getting their implant. 
                       Not because waiting was wrong—but because they didn't realize how simple 
                       the solution could be.
                     </p>
+                    <a href={`tel:${PHONE_NUMBER}`}>
+                      <Button size="lg" variant="emergency" className="text-lg">
+                        <Phone className="mr-2 h-5 w-5" />
+                        Schedule My Free Consult
+                      </Button>
+                    </a>
                   </CardContent>
                 </Card>
               </div>
@@ -278,6 +432,7 @@ const DentalImplants = () => {
                     src={dentalImplantDiagram} 
                     alt="Dental implant cross-section showing titanium post, abutment, and crown" 
                     className="w-full h-auto"
+                    loading="lazy"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
                     <p className="text-sm font-medium text-center">
@@ -291,6 +446,7 @@ const DentalImplants = () => {
                     src={dentalImplantInMouth} 
                     alt="Dental implant placement showing how it integrates with natural teeth" 
                     className="w-full h-auto"
+                    loading="lazy"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
                     <p className="text-sm font-medium text-center">
@@ -374,9 +530,9 @@ const DentalImplants = () => {
                     Move on with your life.
                   </p>
                   <div className="text-center">
-                    <a href="#consultation-form">
-                      <Button size="lg" className="text-lg">
-                        Get Clear Answers About Dental Implants
+                    <a href={`tel:${PHONE_NUMBER}`}>
+                      <Button size="lg" variant="emergency" className="text-lg">
+                        {FREE_CONSULT_CTA}
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </a>
@@ -492,9 +648,9 @@ const DentalImplants = () => {
                   <p className="text-lg text-muted-foreground mb-6">
                     <strong className="text-foreground">Fix it once. Fix it correctly. Move on with confidence.</strong>
                   </p>
-                  <a href="#consultation-form">
-                    <Button size="lg" className="text-lg">
-                      Request a Personalized Implant Evaluation
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg">
+                      {FREE_CONSULT_CTA}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </a>
@@ -503,7 +659,7 @@ const DentalImplants = () => {
             </div>
           </section>
 
-          {/* WHY DIVINE SMILES */}
+          {/* WHY DIVINE SMILES - DETAILED */}
           <section 
             ref={whyUsAnimation.ref}
             className="py-20 bg-muted/30"
@@ -617,9 +773,15 @@ const DentalImplants = () => {
                   <p className="text-xl font-medium mb-2">
                     Focused on getting it right, not rushing it.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-6">
                     For patients who don't want to redo this later.
                   </p>
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Schedule My Free Consult
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -708,6 +870,15 @@ const DentalImplants = () => {
                     </CardContent>
                   </Card>
                 </div>
+
+                <div className="text-center mt-10">
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg">
+                      Get Your Questions Answered — Free Consult
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -753,49 +924,65 @@ const DentalImplants = () => {
             </div>
           </section>
 
-          {/* FINANCING & ACCESS */}
+          {/* FINANCING & ACCESS - Enhanced */}
           <section 
             ref={financingAnimation.ref}
             className="py-16"
           >
             <div className="container px-4 mx-auto max-w-4xl">
               <div className={`transition-all duration-700 ${financingAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <Card>
+                <div className="text-center mb-10">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                    Making Implants Accessible
+                  </h2>
+                  <p className="text-muted-foreground">
+                    We believe cost shouldn't prevent you from getting the care you need.
+                  </p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-6 text-center mb-8">
+                  <Card className="border-2 border-accent/30">
                     <CardContent className="pt-6">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="h-6 w-6 text-primary" />
+                      <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CreditCard className="h-6 w-6 text-accent" />
                       </div>
-                      <h3 className="font-semibold mb-2">Financing Available</h3>
+                      <h3 className="font-semibold mb-2">Flexible Financing</h3>
                       <p className="text-sm text-muted-foreground">
-                        Flexible payment plans to fit your budget
+                        Custom payment plans tailored to your budget — monthly options available
                       </p>
                     </CardContent>
                   </Card>
                   
-                  <Card>
+                  <Card className="border-2 border-accent/30">
                     <CardContent className="pt-6">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="h-6 w-6 text-primary" />
+                      <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="h-6 w-6 text-accent" />
                       </div>
                       <h3 className="font-semibold mb-2">Insurance Accepted</h3>
                       <p className="text-sm text-muted-foreground">
-                        We work with most major dental insurance plans
+                        We work with most major dental insurance plans and maximize your benefits
                       </p>
                     </CardContent>
                   </Card>
                   
-                  <Card>
+                  <Card className="border-2 border-accent/30">
                     <CardContent className="pt-6">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="h-6 w-6 text-primary" />
+                      <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <DollarSign className="h-6 w-6 text-accent" />
                       </div>
-                      <h3 className="font-semibold mb-2">Personalized Quote</h3>
+                      <h3 className="font-semibold mb-2">Transparent Pricing</h3>
                       <p className="text-sm text-muted-foreground">
-                        Consultation determines what's right for you
+                        Your free consultation includes a personalized cost breakdown — no hidden fees
                       </p>
                     </CardContent>
                   </Card>
+                </div>
+                <div className="text-center">
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button size="lg" variant="emergency" className="text-lg">
+                      {FREE_CONSULT_CTA}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -810,44 +997,60 @@ const DentalImplants = () => {
             <div className="container px-4 mx-auto max-w-3xl">
               <div className={`transition-all duration-700 ${finalCtaAnimation.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <div className="text-center">
+                  <div className="inline-flex items-center gap-2 bg-primary-foreground/15 px-4 py-2 rounded-full mb-6 text-sm font-bold">
+                    <Sparkles className="h-4 w-4" />
+                    100% FREE — No Obligation
+                  </div>
+                  
                   <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                    Ready to Know Your Options?
+                    Your FREE Implant Consultation Is Waiting
                   </h2>
                   <p className="text-xl mb-8 text-primary-foreground/90">
-                    Schedule your dental implant consultation. You'll leave with clear answers 
+                    Call now to schedule. You'll leave with clear answers 
                     about what's possible, what's involved, and whether an implant is right for you.
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-4 mb-8 text-left max-w-xl mx-auto">
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0" />
-                      <span>Permanent, natural-looking solution</span>
+                      <span>Personalized treatment plan</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0" />
-                      <span>Full chewing function restored</span>
+                      <span>Clear cost breakdown</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0" />
-                      <span>Long-term confidence in your smile</span>
+                      <span>Financing options discussed</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0" />
-                      <span>Clear answers, no obligation</span>
+                      <span>Zero pressure, zero obligation</span>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                    <a href="tel:203-350-7723">
-                      <Button size="lg" variant="secondary" className="text-lg h-16 px-10 w-full sm:w-auto">
+                    <a href={`tel:${PHONE_NUMBER}`}>
+                      <Button size="lg" variant="secondary" className="text-lg h-16 px-10 w-full sm:w-auto font-bold">
                         <Phone className="mr-2 h-6 w-6" />
-                        Call 203-350-7723
+                        Call Now: {PHONE_NUMBER}
                       </Button>
                     </a>
                   </div>
                   
+                  {/* Social proof repeat */}
+                  <div className="flex items-center justify-center gap-3 mb-6">
+                    <div className="flex">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="font-bold">4.9 Stars</span>
+                    <span className="text-primary-foreground/70">· 200+ Google Reviews</span>
+                  </div>
+                  
                   <p className="text-sm text-primary-foreground/70">
-                    No obligation. Just clarity about your options.
+                    Your free consultation is a conversation, not a commitment.
                   </p>
                   
                   <div className="mt-8 pt-8 border-t border-primary-foreground/20">
@@ -871,11 +1074,11 @@ const DentalImplants = () => {
       </div>
       
       {/* Sticky Mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur border-t md:hidden z-50">
-        <a href="tel:203-350-7723" className="block">
-          <Button size="lg" className="w-full text-lg h-14">
+      <div className="fixed bottom-0 left-0 right-0 p-3 bg-background/95 backdrop-blur border-t md:hidden z-50">
+        <a href={`tel:${PHONE_NUMBER}`} className="block">
+          <Button size="lg" variant="emergency" className="w-full text-base h-14 font-bold">
             <Phone className="mr-2 h-5 w-5" />
-            Schedule Implant Consultation
+            {FREE_CONSULT_CTA}
           </Button>
         </a>
       </div>
