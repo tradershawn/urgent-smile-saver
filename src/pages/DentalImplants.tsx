@@ -46,7 +46,7 @@ const DentalImplants = () => {
     <>
       <Helmet>
         <title>FREE Dental Implant Consultation | New Haven CT | Divine Smiles</title>
-        <meta name="description" content="Schedule your FREE dental implant consultation at Divine Smiles in New Haven, CT. Permanent, natural-looking tooth replacement. Flexible financing available. Call 203-350-7723." />
+        <meta name="description" content="Schedule your FREE dental implant consultation at Divine Smiles in New Haven, CT. Permanent, natural-looking tooth replacement. Flexible financing available. Call 203-865-1480." />
         <link rel="canonical" href="https://emergency.divinesmilespc.com/dental-implants" />
       </Helmet>
       
