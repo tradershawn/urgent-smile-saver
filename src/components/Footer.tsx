@@ -38,6 +38,12 @@ const Footer = () => {
         
         <div className="border-t border-primary-foreground/20 pt-6 text-center text-sm opacity-75">
           <p>© 2024 New Haven Emergency Dental. All rights reserved. | Emergency Dental Clinic in New Haven</p>
+          <p className="mt-4">
+            For support call{" "}
+            <a href="tel:203-350-7723" className="underline hover:opacity-80 font-semibold">
+              203-350-7723
+            </a>
+          </p>
         </div>
       </div>
     </footer>

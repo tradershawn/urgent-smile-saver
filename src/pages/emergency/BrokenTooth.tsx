@@ -15,7 +15,7 @@ const BrokenTooth = () => {
     <>
       <Helmet>
         <title>Broken or Chipped Tooth Emergency Repair | New Haven CT</title>
-        <meta name="description" content="Broke or chipped a tooth? Fast same-visit repair. No wait - call now for emergency dental care. New Haven emergency dentist 203-350-7723." />
+        <meta name="description" content="Broke or chipped a tooth? Fast same-visit repair. No wait - call now for emergency dental care. New Haven emergency dentist 203-865-1480." />
       </Helmet>
       
       <div className="min-h-screen">
@@ -30,10 +30,10 @@ const BrokenTooth = () => {
                 <p className="text-xl text-muted-foreground mb-6">
                   Fast repair – often same visit • No wait – call now
                 </p>
-                <a href="tel:203-350-7723">
+                <a href="tel:203-865-1480">
                   <Button size="lg" variant="emergency" className="text-xl h-16 px-8 animate-pulse">
                     <Phone className="mr-2 h-6 w-6" />
-                    Call Now: 203-350-7723
+                    Call Now: 203-865-1480
                   </Button>
                 </a>
               </div>
@@ -70,7 +70,7 @@ const BrokenTooth = () => {
                 <CardContent className="pt-6">
                   <h2 className="text-2xl font-bold mb-4">What to Do If You Break a Tooth</h2>
                   <ol className="space-y-3 list-decimal list-inside">
-                    <li className="text-lg"><strong>Call us immediately</strong> at 203-350-7723</li>
+                    <li className="text-lg"><strong>Call us immediately</strong> at 203-865-1480</li>
                     <li className="text-lg"><strong>Save any pieces</strong> of the broken tooth</li>
                     <li className="text-lg"><strong>Rinse your mouth</strong> gently with warm water</li>
                     <li className="text-lg"><strong>Apply gauze</strong> if there's bleeding</li>
@@ -105,10 +105,10 @@ const BrokenTooth = () => {
                 <h3 className="text-2xl font-bold mb-2">Walk-Ins Welcome</h3>
                 <p className="text-lg mb-4">No appointment needed for emergencies</p>
                 <p className="mb-4">📍 1574 Chapel St, New Haven, CT 06511</p>
-                <a href="tel:203-350-7723">
+                <a href="tel:203-865-1480">
                   <Button size="lg" variant="secondary" className="text-lg">
                     <Phone className="mr-2" />
-                    203-350-7723
+                    203-865-1480
                   </Button>
                 </a>
               </div>

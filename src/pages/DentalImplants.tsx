@@ -15,7 +15,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useEffect, useState } from "react";
 
 const FREE_CONSULT_CTA = "Claim Your FREE Implant Consultation";
-const PHONE_NUMBER = "203-350-7723";
+const PHONE_NUMBER = "203-865-1480";
 
 const DentalImplants = () => {
   const heroAnimation = useScrollAnimation();

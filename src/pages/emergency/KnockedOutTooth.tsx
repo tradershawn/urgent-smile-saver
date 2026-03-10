@@ -15,7 +15,7 @@ const KnockedOutTooth = () => {
     <>
       <Helmet>
         <title>Knocked-Out Tooth Emergency - Come In Under 60 Minutes | New Haven</title>
-        <meta name="description" content="Save your knocked-out tooth! Come in under 60 minutes for highest re-implant success. Emergency dental care New Haven 203-350-7723." />
+        <meta name="description" content="Save your knocked-out tooth! Come in under 60 minutes for highest re-implant success. Emergency dental care New Haven 203-865-1480." />
       </Helmet>
       
       <div className="min-h-screen">
@@ -38,10 +38,10 @@ const KnockedOutTooth = () => {
                 <p className="text-xl text-muted-foreground mb-6">
                   Save your tooth – come in &lt;60 min • Highest re-implant success rate
                 </p>
-                <a href="tel:203-350-7723">
+                <a href="tel:203-865-1480">
                   <Button size="lg" variant="emergency" className="text-xl h-16 px-8 animate-pulse">
                     <Phone className="mr-2 h-6 w-6" />
-                    Call Now: 203-350-7723
+                    Call Now: 203-865-1480
                   </Button>
                 </a>
               </div>
@@ -116,10 +116,10 @@ const KnockedOutTooth = () => {
                 <h3 className="text-2xl font-bold mb-2">Open 24/7 for Emergencies</h3>
                 <p className="text-lg mb-4">Every second counts - call now</p>
                 <p className="mb-4">📍 1574 Chapel St, New Haven, CT 06511</p>
-                <a href="tel:203-350-7723">
+                <a href="tel:203-865-1480">
                   <Button size="lg" variant="secondary" className="text-lg">
                     <Phone className="mr-2" />
-                    203-350-7723
+                    203-865-1480
                   </Button>
                 </a>
               </div>
